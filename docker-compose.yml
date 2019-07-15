@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    volumes:
+    - .:/go/src/github.com/olivere/go-container-debugging
+    ports:
+    - "2345:2345" # debugging endpoint
+    - "8080:8080" # application endpoint
+    # These settings may be important, but I found them to NOT be required
+    # security_opt:
+    # - "seccomp:unconfined"
